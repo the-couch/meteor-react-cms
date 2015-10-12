@@ -1,7 +1,7 @@
 Header = React.createClass({
   render() {
     return (
-      <div>
+      <div className="header">
         <div className="logo">
           bagel
         </div>
@@ -15,4 +15,4 @@ Template.layout.helpers({
   Header() {
     return Header;
   }
-})
+});
