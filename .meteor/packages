@@ -4,7 +4,7 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-insecure
+
 react
 kadira:flow-router-ssr
 kadira:react-layout
@@ -19,6 +19,16 @@ tracker
 logging
 reload
 random
+http
 ejson
 spacebars
 check
+accounts-google
+service-configuration
+lepozepo:s3
+alanning:roles
+fourseven:scss
+accounts-password
+mquandalle:bower
+email
+mrt:moment
