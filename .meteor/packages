@@ -20,6 +20,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 react
 kadira:flow-router
 kadira:blaze-layout
+arillo:flow-router-helpers
 # kadira:react-layout
 react-template-helper
 themeteorchef:jquery-validation

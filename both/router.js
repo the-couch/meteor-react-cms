@@ -17,6 +17,12 @@ exposed.route("/", {
     BlazeLayout.render("layout", {content: ""});
   }
 });
+
+exposed.route("/login", {
+  action: function() {
+    BlazeLayout.render("layout", {content: "login"});
+  }
+});
 //
 // exposed.route('/post/:_id', {
 //   name: 'post',

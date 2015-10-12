@@ -1,0 +1,23 @@
+<template name="login">
+  <div class="container">
+    <section class="login-page">
+        <form id="login">
+        <h1>Login</h1>
+          {{#if error}}
+            <div class="alert alert-error">
+              {{error}}
+            </div>
+          {{/if}}
+          <div>
+            <input type="email" name="emailAddress" class="form-control" placeholder="Email Address">
+            <input type="password" name="password" class="form-control" placeholder="Password">
+            <input type="submit" class="btn-active btn btn-flat" value="Login">
+            <div class="login-alternatives">
+              <a href="{{pathFor 'signup'}}" class="btn btn-flat">Sign Up</a>
+              <a href="{{pathFor 'recover-password'}}" class="forgot-pass">Forgot Password?</a>
+            </div>
+          </div>
+        </form>
+    </section>
+  </div>
+</template>
