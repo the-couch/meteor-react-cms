@@ -6,7 +6,7 @@ exposed = FlowRouter.group({});
 
 FlowRouter.notFound = {
   action: function() {
-    ReactLayout.render(NotFound);
+    BlazeLayout.render(NotFound);
   }
 }
 
@@ -14,30 +14,18 @@ FlowRouter.notFound = {
 
 exposed.route("/", {
   action: function() {
-    ReactLayout.render(BlogLayout, {
-      content: <PostList />
-    });
+    BlazeLayout.render("layout", {content: ""});
   }
 });
-
-exposed.route('/post/:_id', {
-  name: 'post',
-  action: function(params) {
-    ReactLayout.render(BlogLayout, {
-      content: <PostPage _id={params._id} />
-    });
-  }
-});
-
-// User Signup and authentication routes
-
-exposed.route('/login', {
-  action: function() {
-    ReactLayout.render(Layout, {
-      content: <Login />
-    });
-  }
-});
+//
+// exposed.route('/post/:_id', {
+//   name: 'post',
+//   action: function(params) {
+//     ReactLayout.render(BlogLayout, {
+//       content: <PostPage _id={params._id} />
+//     });
+//   }
+// });
 
 // Logged in rotue for logged in users
 

@@ -18,13 +18,15 @@ es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 react
-kadira:flow-router-ssr
-kadira:react-layout
-
-blaze-html-templates
-session
+kadira:flow-router
+kadira:blaze-layout
+# kadira:react-layout
+react-template-helper
+themeteorchef:jquery-validation
 logging
 reload
+cosmos:browserify
+meteorhacks:npm
 random
 http
 ejson
@@ -39,3 +41,6 @@ accounts-password
 email
 mrt:moment
 mquandalle:bower
+
+
+npm-container
