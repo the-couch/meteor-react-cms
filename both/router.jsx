@@ -4,6 +4,12 @@ var exposed, loggedIn, admin;
 
 exposed = FlowRouter.group({});
 
+FlowRouter.notFound = {
+  action: function() {
+    ReactLayout.render(NotFound);
+  }
+}
+
 // General Routes
 
 exposed.route("/", {
