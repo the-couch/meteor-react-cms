@@ -1,9 +1,0 @@
-{
-  "name": "perseus",
-  "version": "0.0.1",
-  "dependencies": {
-    "neat": "~1.7.2"
-  },
-  "overrides": {},
-  "private": true
-}
