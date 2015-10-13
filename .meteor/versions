@@ -35,7 +35,7 @@ ejson@1.0.7
 email@1.0.7
 es5-shim@4.1.13
 fastclick@1.0.7
-fourseven:scss@3.3.3_3
+fourseven:scss@3.4.0-beta1
 geojson-utils@1.0.4
 google@1.1.6
 hot-code-push@1.0.0
@@ -103,4 +103,6 @@ underscore@1.0.4
 url@1.0.5
 webapp@1.2.2
 webapp-hashing@1.0.5
+wolves:bourbon@3.1.0
+wolves:neat@3.1.0
 zimme:active-route@2.3.2

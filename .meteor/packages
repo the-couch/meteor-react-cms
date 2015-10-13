@@ -21,7 +21,6 @@ react
 kadira:flow-router
 kadira:blaze-layout
 arillo:flow-router-helpers
-# kadira:react-layout
 react-template-helper
 themeteorchef:jquery-validation
 logging
@@ -37,13 +36,13 @@ accounts-google
 service-configuration
 lepozepo:s3
 alanning:roles
-fourseven:scss
+fourseven:scss@=3.4.0-beta1
 accounts-password
 aldeed:collection2
+mquandalle:bower
 rubaxa:sortable
 email
 mrt:moment
-mquandalle:bower
-
-
+wolves:bourbon
+wolves:neat
 npm-container

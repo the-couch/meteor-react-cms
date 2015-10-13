@@ -1,22 +1,9 @@
 {
-  "name": "Meteor React CMS",
+  "name": "perseus",
   "version": "0.0.1",
-  "homepage": "",
-  "authors": [
-    "Kevin Green <kevin@redantler.com>"
-  ],
-  "description": "A Meteor CMS with React",
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
-    "bourbon": "4.2.1",
-    "neat": "1.4.0",
-    "bitters": "1.0.0"
-  }
+    "neat": "~1.7.2"
+  },
+  "overrides": {},
+  "private": true
 }

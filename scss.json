@@ -1,7 +1,0 @@
-{
-  "userIndex": true,
-  "indexFilePath": "client/stylesheets/base.scss",
-  "includePaths": [
-    ".meteor/local/bower"
-  ]
-}
