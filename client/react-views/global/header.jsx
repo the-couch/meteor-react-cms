@@ -16,3 +16,9 @@ Template.layout.helpers({
     return Header;
   }
 });
+
+Template.adminLayout.helpers({
+  Header() {
+    return Header;
+  }
+});

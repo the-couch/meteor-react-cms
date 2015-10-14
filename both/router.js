@@ -75,9 +75,16 @@ admin = loggedIn.group({
   ]
 });
 
+admin.route("/manage", {
+  action: function() {
+    Session.set('redirectAfterLogin', "/");
+    BlazeLayout.render("adminLayout", {content: "adminManage"});
+  }
+});
+
 // Redirect for after a user logs in
 
 Accounts.onLogin(function() {
-  Metoer.logoutOtherClients();
+  Meteor.logoutOtherClients();
   Session.set('loggedIn', true);
 });

@@ -32,6 +32,8 @@ Template.login.rendered = function() {
       return Meteor.loginWithPassword(user.email, user.password, function(error) {
         if (error) {
           return alert(error.reason);
+        } else {
+          FlowRouter.go('/');
         }
       });
     }
