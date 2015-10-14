@@ -6,7 +6,7 @@ exposed = FlowRouter.group({});
 
 FlowRouter.notFound = {
   action: function() {
-    BlazeLayout.render(NotFound);
+    BlazeLayout.render("layout", {content: "notFound"});
   }
 }
 
@@ -20,6 +20,7 @@ exposed.route("/", {
 
 exposed.route("/login", {
   action: function() {
+    Session.set('redirectAfterLogin', "/");
     BlazeLayout.render("layout", {content: "login"});
   }
 });
@@ -77,11 +78,6 @@ admin = loggedIn.group({
 // Redirect for after a user logs in
 
 Accounts.onLogin(function() {
-  var redirect;
-  redirect = Session.get('redirectAfterLogin');
-  if (redirect != null) {
-    if (redirect !== '/login') {
-      return FlowRouter.go(redirect);
-    }
-  }
+  Metoer.logoutOtherClients();
+  Session.set('loggedIn', true);
 });
