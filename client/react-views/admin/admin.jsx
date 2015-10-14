@@ -5,7 +5,7 @@ Admin = React.createClass({
         <div className="col s12">
           <div className="section">
             <h5>Manage Team Members</h5>
-            <Navigation />
+            <AdminTeams />
           </div>
           <div className="divider"></div>
         </div>
