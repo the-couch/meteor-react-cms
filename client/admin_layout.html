@@ -1,10 +1,6 @@
 <template name="adminLayout">
-  <head>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
-  </head>
+  <header>{{> React component=Header}}</header>
   <div class="container">
-    <header>{{> React component=Header}}</header>
     <div class="admin">{{> React component=Admin}}</div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
 </template>

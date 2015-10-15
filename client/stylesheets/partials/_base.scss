@@ -1,0 +1,17 @@
+body, html {
+  padding: 0 0;
+  margin: 0 0;
+  background-color: #f2f2f2;
+}
+
+body, html, p, li, ul, h1, h2, h3, h4, h5, a, input, textarea {
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  @include span-columns(12);
+  @include pad(0 30px);
+}

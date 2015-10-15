@@ -14,7 +14,7 @@ FlowRouter.notFound = {
 
 exposed.route("/", {
   action: function() {
-    BlazeLayout.render("layout", {content: ""});
+    BlazeLayout.render("layout", {content: "home"});
   }
 });
 
@@ -80,11 +80,4 @@ admin.route("/manage", {
     Session.set('redirectAfterLogin', "/");
     BlazeLayout.render("adminLayout", {content: "adminManage"});
   }
-});
-
-// Redirect for after a user logs in
-
-Accounts.onLogin(function() {
-  Meteor.logoutOtherClients();
-  Session.set('loggedIn', true);
 });

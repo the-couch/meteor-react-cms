@@ -1,4 +1,11 @@
-nav {
+.navigation {
+  background: black;
+  width: 100%;
+  @include pad(10px);
+  text-transform: uppercase;
+  a {
+    color: $lite-text;
+  }
   ul {
     margin: 0 0;
     padding: 0 0;

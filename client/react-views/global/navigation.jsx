@@ -54,7 +54,7 @@ Navigation = React.createClass({
     let loginStatus = this.getLoginStatus();
     let adminStatus = this.getAdminStatus();
     return (
-      <nav>
+      <div className="navigation">
         <ul>
           <li>
             <a href="/">Home</a>
@@ -64,7 +64,7 @@ Navigation = React.createClass({
           </li>
           {adminStatus ? <AdminUser /> : '' }
         </ul>
-      </nav>
+      </div>
     )
   }
-})
+});

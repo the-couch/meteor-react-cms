@@ -1,15 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
 @import "{wolves:bourbon}/bourbon";
 @import "{wolves:neat}/neat";
 
+// configs
+@import "partials/colors.config";
 
 
-body, div, a, p, ul, li {
-  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
-}
-
-body {
-  margin: 20px;
-  background-color: #f2f2f2;
-}
-
+@import "partials/base";
+@import "partials/typography";
 @import "partials/navigation";
