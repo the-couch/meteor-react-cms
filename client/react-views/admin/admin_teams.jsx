@@ -13,11 +13,17 @@ AdminTeams = React.createClass({
   },
   handleSubmit(event) {
     event.preventDefault();
-    var name = React.findDOMNode(this.refs.textInput).value.trim();
+    var member = {
+      name: React.findDOMNode(this.refs.name).value.trim(),
+      position: React.findDOMNode(this.refs.position).value.trim(),
+      biography: React.findDOMNode(this.refs.biography).value.trim()
+    }
 
-    Meteor.call("addMember", name);
+    Meteor.call("addMember", member);
 
-    React.findDOMNode(this.refs.textInput).value = "";
+    React.findDOMNode(this.refs.name).value = "";
+    React.findDOMNode(this.refs.position).value = "";
+    React.findDOMNode(this.refs.biography).value = "";
   },
   render() {
     return (
@@ -25,10 +31,13 @@ AdminTeams = React.createClass({
         {this.renderMembers()}
         <form className="new-member" onSubmit={this.handleSubmit} >
           { this.data.currentUser ?
-            <input
-              type="text"
-              ref="textInput"
-              placeholder="Team Member Name" /> : ''
+            <div className="form-inputs">
+              <input type="text" ref="name" placeholder="Name" />
+              <input type="text" ref="position" placeholder="Position" />
+              <textarea type="text" ref="biography" placeholder="Biography"></textarea>
+              <input type="submit" value="Create Team Member" />
+          </div>
+            : ''
           }
         </form>
       </div>
@@ -45,11 +54,13 @@ Member = React.createClass({
   },
   render() {
     return (
-      <li>
+      <li className="teamMember">
         <button className="delete" onClick={this.deleteThisTask}>
           &times;
         </button>
-        <span className="text">{this.props.member.name}</span>
+        <span className="name">{this.props.member.name}</span>
+        <span className="position">{this.props.member.position}</span>
+        <span className="biography">{this.props.member.biography}</span>
       </li>
     );
   }

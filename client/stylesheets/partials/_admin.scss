@@ -1,0 +1,44 @@
+.form-inputs {
+  margin: 10px 0;
+  input {
+    padding: 10px;
+    border: 0;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  textarea {
+    display: block;
+    margin-top: 10px;
+    width: 386px;
+    border: 0;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+  }
+}
+.admin {
+  li {
+    list-style-type: none;
+    margin: 8px 0;
+    padding: 0 0;
+    font-size: 14px;
+  }
+  ul {
+    margin: 0 0;
+    padding: 0 0;
+  }
+  button {
+    border: none;
+    padding: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+    background: white;
+    color: #ccc;
+  }
+  .teamMember {
+    span {
+      display: inline-block;
+      margin-right: 14px;
+    }
+  }
+}
