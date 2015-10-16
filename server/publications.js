@@ -5,3 +5,7 @@ Meteor.publish('posts', function(selector) {
 Meteor.publish('singlePost', function(_id) {
   return Posts.find({_id: _id});
 });
+
+Meteor.publish('members', function() {
+  return Members.find();
+});

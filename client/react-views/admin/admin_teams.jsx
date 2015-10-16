@@ -2,7 +2,8 @@ AdminTeams = React.createClass({
   mixins: [ReactMeteorData],
   getMeteorData() {
     return {
-      members: Members.find({}).fetch()
+      members: Members.find({}).fetch(),
+      currentUser: Meteor.user()
     }
   },
   renderMembers() {
@@ -12,12 +13,9 @@ AdminTeams = React.createClass({
   },
   handleSubmit(event) {
     event.preventDefault();
-    var text = React.findDOMNode(this.refs.textInput).value.trim();
+    var name = React.findDOMNode(this.refs.textInput).value.trim();
 
-    Members.insert({
-      name: text,
-      createdAt: new Date()
-    });
+    Meteor.call("addMember", name);
 
     React.findDOMNode(this.refs.textInput).value = "";
   },
@@ -26,10 +24,12 @@ AdminTeams = React.createClass({
       <div className="">
         {this.renderMembers()}
         <form className="new-member" onSubmit={this.handleSubmit} >
-          <input
-            type="text"
-            ref="textInput"
-            placeholder="Team Member Name" />
+          { this.data.currentUser ?
+            <input
+              type="text"
+              ref="textInput"
+              placeholder="Team Member Name" /> : ''
+          }
         </form>
       </div>
     );
@@ -40,9 +40,17 @@ Member = React.createClass({
   propTypes: {
     member: React.PropTypes.object.isRequired
   },
+  deleteThisTask() {
+    Meteor.call("removeMember", this.props.member._id);
+  },
   render() {
     return (
-      <li>{this.props.member.name}</li>
+      <li>
+        <button className="delete" onClick={this.deleteThisTask}>
+          &times;
+        </button>
+        <span className="text">{this.props.member.name}</span>
+      </li>
     );
   }
 });

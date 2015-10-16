@@ -22,6 +22,20 @@ exposed.route("/login", {
   action: function() {
     Session.set('redirectAfterLogin', "/");
     BlazeLayout.render("layout", {content: "login"});
+  },
+  triggersEnter: [
+    function() {
+      var user = Meteor.user();
+      if (user) {
+        return FlowRouter.go('/');
+      }
+    }
+  ]
+});
+
+exposed.route("/login/:error", {
+  action: function(params) {
+    BlazeLayout.render("layout", {content: "login"});
   }
 });
 //
@@ -81,3 +95,9 @@ admin.route("/manage", {
     BlazeLayout.render("adminLayout", {content: "adminManage"});
   }
 });
+
+// Global Subscriptions
+
+FlowRouter.subscriptions = function() {
+  this.register('members', Meteor.subscribe('members'));
+}
