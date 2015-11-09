@@ -83,13 +83,14 @@ admin = loggedIn.group({
   triggersEnter: [
     function() {
       if (!Roles.userIsInRole(Meteor.user(), ['admin'])) {
-        return FlowRouter.go(FlowRouter.path('dashboard'));
+        return FlowRouter.go(FlowRouter.path('manage'));
       }
     }
   ]
 });
 
 admin.route("/manage", {
+  name: 'manage',
   action: function() {
     Session.set('redirectAfterLogin', "/");
     BlazeLayout.render("adminLayout", {content: "adminManage"});
@@ -100,4 +101,5 @@ admin.route("/manage", {
 
 FlowRouter.subscriptions = function() {
   this.register('members', Meteor.subscribe('members'));
+  this.register('press', Meteor.subscribe('press'));
 }

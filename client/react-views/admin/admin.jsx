@@ -8,6 +8,11 @@ Admin = React.createClass({
             <AdminTeams />
           </div>
           <div className="divider"></div>
+          <div className="section">
+            <h5>Manage Press Icons</h5>
+            <AdminTeams />
+          </div>
+          <div className="divider"></div>
         </div>
       </div>
     )

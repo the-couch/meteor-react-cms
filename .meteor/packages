@@ -35,6 +35,7 @@ check
 accounts-google
 service-configuration
 lepozepo:s3
+spiderable
 alanning:roles
 fourseven:scss@=3.4.0-beta1
 accounts-password
