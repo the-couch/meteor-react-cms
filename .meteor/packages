@@ -34,7 +34,6 @@ msavin:mongoinspector
 check
 accounts-google
 service-configuration
-lepozepo:s3
 spiderable
 alanning:roles
 fourseven:scss@=3.4.0-beta1
@@ -47,3 +46,4 @@ mrt:moment
 wolves:bourbon
 wolves:neat
 npm-container
+edgee:slingshot
