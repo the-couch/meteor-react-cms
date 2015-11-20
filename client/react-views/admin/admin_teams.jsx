@@ -53,10 +53,10 @@ AdminTeams = React.createClass({
         <form className="new-member" onSubmit={this.handleSubmit} encType="multipart/form-data" >
           { this.data.currentUser ?
             <div className="form-inputs">
-              <img src={this.state.data_uri} className="js-profile-upload" ref="image" />
-              <input type="file" onChange={this.handleFile} />
+              <img src={this.state.data_uri} className="js-profile-upload" ref="image" /><br />
+              <input type="file" onChange={this.handleFile} /><br />
               <input type="text" ref="name" placeholder="Name" />
-              <input type="hidden" ref="photo" placeholder="Name" value={this.data.data_uri} />
+              <input type="hidden" ref="photo" placeholder="Name" value={this.state.data_uri} />
               <input type="text" ref="position" placeholder="Position" />
               <textarea type="text" ref="biography" placeholder="Biography"></textarea>
               <input type="submit" value="Create Team Member" />

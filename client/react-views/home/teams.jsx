@@ -13,6 +13,7 @@ Teams = React.createClass({
   render() {
     return (
       <div className="">
+        <h3>Team Members</h3>
         <p>{this.renderMembers()}</p>
       </div>
     )
@@ -26,7 +27,14 @@ TeamMember = React.createClass({
   render() {
     return (
       <li>
+        <div className="image-wrapper">
+            <img src={this.props.member.photo} alt=""/>
+        </div>
         <span className="member">{this.props.member.name}</span>
+        <span className="position">{this.props.member.position}</span>
+        <p>
+          {this.props.member.description}
+        </p>
       </li>
     )
   }

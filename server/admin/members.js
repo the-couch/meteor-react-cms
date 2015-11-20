@@ -3,6 +3,7 @@ Meteor.methods({
     check(member, {
       name: String,
       position: String,
+      photo: String,
       biography: String
     });
     if ( ! Meteor.userId() ) {
@@ -12,6 +13,7 @@ Meteor.methods({
     Members.insert({
       name: member.name,
       position: member.position,
+      photo: member.photo,
       biography: member.biography,
       createdAt: new Date()
     });
