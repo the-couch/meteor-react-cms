@@ -33,7 +33,7 @@ TeamMember = React.createClass({
         <span className="member">{this.props.member.name}</span>
         <span className="position">{this.props.member.position}</span>
         <p>
-          {this.props.member.description}
+          {this.props.member.biography}
         </p>
       </li>
     )
