@@ -4,6 +4,11 @@ Admin = React.createClass({
       <div className="row">
         <div className="col s12">
           <div className="section">
+            <h3>Header Image</h3>
+            <AdminHeaderImage />
+          </div>
+          <div className="divider"></div>
+          <div className="section">
             <h3>Manage Services</h3>
             <AdminServices />
           </div>
@@ -29,6 +34,6 @@ Template.adminLayout.helpers({
 Template.adminLayout.rendered = function() {
   $('textarea').redactor({
     toolbar: true,
-    buttons: ['formatting', 'bold', 'italic', 'link']
+    buttons: ['formatting', 'bold', 'italic', 'link', 'list']
   });
 }

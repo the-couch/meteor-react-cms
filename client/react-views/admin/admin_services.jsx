@@ -68,7 +68,7 @@ AdminServices = React.createClass({
         <form className="new-service" onSubmit={this.handleSubmit} encType="multipart/form-data" >
           { this.data.currentUser ?
             <div className="form-inputs">
-              <img src={this.state.data_uri} className="js-profile-upload" ref="image" /><br />
+              <img className="js-profile-upload" ref="image" /><br />
               <input type="file" onChange={this.handleFile} /><br />
               <input type="text" ref="name" placeholder="Name" />
               <input type="hidden" ref="icon" placeholder="Name" value={this.state.data_uri} />
