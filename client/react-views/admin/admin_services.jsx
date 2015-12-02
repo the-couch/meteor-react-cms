@@ -62,7 +62,7 @@ AdminServices = React.createClass({
             <input type="submit" className="btn" value="Update About Copy" />
           </div>
         </form>
-        <ul className="backend-grid">
+        <ul className="backend-grid js-services">
           {this.renderServices()}
         </ul>
         <form className="new-service" onSubmit={this.handleSubmit} encType="multipart/form-data" >
@@ -91,7 +91,7 @@ Service = React.createClass({
   },
   render() {
     return (
-      <li className="service">
+      <li className="service" data-id={this.props.service._id}>
         <button className="delete" onClick={this.deleteThisTask}>
           &times;
         </button>

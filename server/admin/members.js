@@ -21,5 +21,14 @@ Meteor.methods({
   removeMember(memberId) {
     check(memberId, String);
     Members.remove(memberId);
+  },
+  updateMemberOrder(memberUpdate) {
+    check(memberUpdate, Object);
+
+    return Members.update({_id: memberUpdate.memberId}, {
+      $set: {
+        "index": memberUpdate.index
+      }
+    });
   }
 });

@@ -102,6 +102,7 @@ admin.route("/manage", {
 FlowRouter.subscriptions = function() {
   this.register('members', Meteor.subscribe('members'));
   this.register('services', Meteor.subscribe('services'));
+  this.register('processes', Meteor.subscribe('processes'));
   this.register('pages', Meteor.subscribe('pages'));
   this.register('press', Meteor.subscribe('press'));
 }

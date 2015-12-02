@@ -14,6 +14,11 @@ Admin = React.createClass({
           </div>
           <div className="divider"></div>
           <div className="section">
+            <h3>Investment Process</h3>
+            <AdminProcess />
+          </div>
+          <div className="divider"></div>
+          <div className="section">
             <h3>Manage Team Members</h3>
             <AdminTeams />
           </div>
@@ -35,5 +40,38 @@ Template.adminLayout.rendered = function() {
   $('textarea').redactor({
     toolbar: true,
     buttons: ['formatting', 'bold', 'italic', 'link', 'list']
+  });
+
+  let sortableLists = document.querySelectorAll('.backend-grid');
+
+  Array.from(sortableLists).forEach(function(list, index) {
+    Sortable.create(list, {
+      animation: 150,
+      onUpdate: function() {
+        console.log(this);
+        switch (this.el.classList[1]) {
+          case 'js-process':
+            let processes = this.el.querySelectorAll('li');
+            Array.from(processes).forEach(function(process, index) {
+              let processUpdate = {
+                processId: process.dataset.id,
+                index: index
+              }
+              Meteor.call('updateProcessOrder', processUpdate);
+            });
+            break;
+          case 'js-teams':
+            let members = this.el.querySelectorAll('li');
+            Array.from(members).forEach(function(member, index) {
+              let memberUpdate = {
+                memberId: member.dataset.id,
+                index: index
+              }
+              Meteor.call('updateMemberOrder', memberUpdate);
+            });
+            break;
+        }
+      }
+    });
   });
 }

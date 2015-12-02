@@ -14,6 +14,10 @@ Meteor.publish('services', function() {
   return Services.find();
 });
 
+Meteor.publish('processes', function() {
+  return Processes.find();
+});
+
 Meteor.publish('pages', function() {
   return Pages.find();
 });

@@ -50,7 +50,7 @@ AdminTeams = React.createClass({
   render() {
     return (
       <div className="">
-        <ul className="backend-grid">
+        <ul className="backend-grid js-teams">
           {this.renderMembers()}
         </ul>
         <form className="new-member" onSubmit={this.handleSubmit} encType="multipart/form-data" >
@@ -81,7 +81,7 @@ Member = React.createClass({
   },
   render() {
     return (
-      <li className="teamMember">
+      <li className="teamMember" data-id={this.props.member._id}>
         <button className="delete" onClick={this.deleteThisTask}>
           &times;
         </button>
