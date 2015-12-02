@@ -7,18 +7,10 @@ AdminProcess = React.createClass({
   },
   getMeteorData() {
     return {
-      processes: Processes.find({}, {
-        sort: {index: -1}
-      }),
       page: Pages.findOne({}),
       counts: Counts.get('processes-counter'),
       currentUser: Meteor.user()
     }
-  },
-  renderProcesses() {
-    return this.data.processes.map((process) => {
-      return <Process key={process._id} process={process} />;
-    });
   },
   handleSubmit(event) {
     event.preventDefault();
@@ -51,9 +43,7 @@ AdminProcess = React.createClass({
             <input type="submit" className="btn" value="Update About Copy" />
           </div>
         </form>
-        <ul className="backend-grid js-process">
-          {this.renderProcesses()}
-        </ul>
+        <SortableProcesses />
         <form className="new-service" onSubmit={this.handleSubmit}>
           { this.data.currentUser ?
             <div className="form-inputs">
@@ -69,6 +59,27 @@ AdminProcess = React.createClass({
   }
 });
 
+SortableProcesses = React.createClass({
+  mixins: [SortableMixin, ReactMeteorData],
+  getMeteorData() {
+    return {
+      processes: Processes.find({}, {
+        sort: {index: -1}
+      }).fetch()
+    }
+  },
+  renderProcesses() {
+    return this.data.processes.map((process) => {
+      return <Process key={process._id} process={process} />;
+    });
+  },
+  render() {
+    return <ul>{
+        this.renderProcesses()
+      }</ul>
+  }
+});
+
 Process = React.createClass({
   propTypes: {
     process: React.PropTypes.object.isRequired
@@ -78,7 +89,7 @@ Process = React.createClass({
   },
   render() {
     return (
-      <li className="process" data-id={this.props.process._id}>
+      <li className="process" data-id={this.props.process._id} data-sort>
         <button className="delete" onClick={this.deleteThisTask}>
           &times;
         </button>
