@@ -47,14 +47,16 @@ AdminServices = React.createClass({
   render() {
     return (
       <div className="">
-        <h3>About Copy</h3>
+        <h5>Services About Copy</h5>
         <form className="service-copy">
           <div className="form-inputs">
             <textarea ref="about-copy" placeholder="This is the copy above the services module">{this.data.page ? this.data.page.about : ''}</textarea>
             <input type="submit" className="btn" value="Update About Copy" />
           </div>
         </form>
-        {this.renderServices()}
+        <ul className="backend-grid">
+          {this.renderServices()}
+        </ul>
         <form className="new-service" onSubmit={this.handleSubmit} encType="multipart/form-data" >
           { this.data.currentUser ?
             <div className="form-inputs">

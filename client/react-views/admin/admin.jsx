@@ -4,12 +4,12 @@ Admin = React.createClass({
       <div className="row">
         <div className="col s12">
           <div className="section">
-            <h5>Manage Services</h5>
+            <h3>Manage Services</h3>
             <AdminServices />
           </div>
           <div className="divider"></div>
           <div className="section">
-            <h5>Manage Team Members</h5>
+            <h3>Manage Team Members</h3>
             <AdminTeams />
           </div>
           <div className="divider"></div>

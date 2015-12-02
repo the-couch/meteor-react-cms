@@ -50,7 +50,9 @@ AdminTeams = React.createClass({
   render() {
     return (
       <div className="">
-        {this.renderMembers()}
+        <ul className="backend-grid">
+          {this.renderMembers()}
+        </ul>
         <form className="new-member" onSubmit={this.handleSubmit} encType="multipart/form-data" >
           { this.data.currentUser ?
             <div className="form-inputs">

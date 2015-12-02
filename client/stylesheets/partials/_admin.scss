@@ -4,6 +4,7 @@
     padding: 10px;
     border: 0;
     font-size: 16px;
+    margin: 10px 0;
     margin-right: 10px;
   }
   textarea {
@@ -18,6 +19,13 @@
   .btn {
     border: 1px solid rgb(210, 209, 210);
     background: white;
+    transition: all .25s;
+    cursor: pointer;
+    display: block;
+    margin: 10px 0;
+    &:hover {
+      background: rgb(227, 227, 227);
+    }
   }
 }
 .admin {
@@ -35,6 +43,21 @@
     span {
       display: inline-block;
       margin-right: 14px;
+    }
+  }
+  .backend-grid {
+
+    li {
+      width: 100%;
+      display: block;
+      @include respond-at-and-above($break-medium) {
+        width: 50%;
+      }
+    }
+
+    @include respond-at-and-above($break-medium) {
+      display: flex;
+      justify-content: space-around;
     }
   }
 }

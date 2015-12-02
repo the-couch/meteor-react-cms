@@ -1,0 +1,50 @@
+
+
+// Clear Fix
+@mixin cf {
+  &:before, &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+  *zoom: 1;
+}
+
+//// Media Query Mixins ////
+@mixin respond-below($width) {
+  @media (max-width: $width - 1) {
+    @content;
+  }
+}
+
+@mixin respond-between($start, $end) {
+  @media (min-width: $start) and (max-width: $end - 1) {
+    @content;
+  }
+}
+
+@mixin respond-at-and-above($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin vertical-respond-below($height) {
+  @media (max-height: $height - 1) {
+    @content;
+  }
+}
+
+@mixin vertical-respond-between($start, $end) {
+  @media (min-height: $start) and (max-height: $end - 1) {
+    @content;
+  }
+}
+
+@mixin vertical-respond-at-and-above($height) {
+  @media (min-height: $height) {
+    @content;
+  }
+}
