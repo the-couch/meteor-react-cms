@@ -29,6 +29,7 @@ AdminTeams = React.createClass({
 
     React.findDOMNode(this.refs.name).value = "";
     React.findDOMNode(this.refs.position).value = "";
+    React.findDOMNode(this.refs.photo).value = "";
     React.findDOMNode(this.refs.biography).value = "";
   },
   handleFile: function(e) {

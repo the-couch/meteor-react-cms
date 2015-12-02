@@ -10,6 +10,10 @@ Meteor.publish('members', function() {
   return Members.find();
 });
 
+Meteor.publish('services', function() {
+  return Services.find();
+});
+
 Meteor.publish('press', function() {
   return Press.find();
 });
