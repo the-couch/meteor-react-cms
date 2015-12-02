@@ -29,6 +29,14 @@ AdminServices = React.createClass({
     React.findDOMNode(this.refs.name).value = "";
     React.findDOMNode(this.refs.icon).value = "";
   },
+  handleCopyUpdate(event) {
+    event.preventDefault();
+    var about = {
+      about: React.findDOMNode(this.refs.about).value.trim()
+    }
+
+    Meteor.call('updateAbout', about);
+  },
   handleFile: function(e) {
     var self = this;
     var file = e.target.files[0];
@@ -48,9 +56,9 @@ AdminServices = React.createClass({
     return (
       <div className="">
         <h5>Services About Copy</h5>
-        <form className="service-copy">
+        <form className="service-copy" onSubmit={this.handleCopyUpdate}>
           <div className="form-inputs">
-            <textarea ref="about-copy" placeholder="This is the copy above the services module">{this.data.page ? this.data.page.about : ''}</textarea>
+            <textarea ref="about" placeholder="This is the copy above the services module">{this.data.page ? this.data.page.about : ''}</textarea>
             <input type="submit" className="btn" value="Update About Copy" />
           </div>
         </form>

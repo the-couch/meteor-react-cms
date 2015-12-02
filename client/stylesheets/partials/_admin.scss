@@ -29,17 +29,21 @@
   }
 }
 .admin {
+
   li {
     list-style-type: none;
     margin: 8px 0;
     padding: 0 0;
     font-size: 14px;
   }
+
   ul {
     margin: 0 0;
     padding: 0 0;
   }
+
   .teamMember {
+
     span {
       display: inline-block;
       margin-right: 14px;
@@ -58,6 +62,18 @@
     @include respond-at-and-above($break-medium) {
       display: flex;
       justify-content: space-around;
+    }
+  }
+
+  button {
+    border-radius: 0;
+    border: 1px solid rgb(210, 209, 210);
+    background: white;
+    margin-right: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgb(227, 227, 227);
     }
   }
 }
