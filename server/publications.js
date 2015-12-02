@@ -25,3 +25,9 @@ Meteor.publish('pages', function() {
 Meteor.publish('press', function() {
   return Press.find();
 });
+
+Meteor.publish('notifications', function() {
+  Counts.publish(this, 'services-counter', Services.find({}));
+  Counts.publish(this, 'processes-counter', Processes.find({}));
+  Counts.publish(this, 'members-counter', Members.find({}));
+});

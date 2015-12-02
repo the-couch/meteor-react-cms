@@ -3,6 +3,7 @@ Meteor.methods({
     check(process, {
       title: String,
       snippet: String,
+      count: Number
     });
     if ( ! Meteor.userId() ) {
       throw new Meteor.Error("not-athorized");
@@ -11,6 +12,7 @@ Meteor.methods({
     Processes.insert({
       title: process.title,
       snippet: process.snippet,
+      index: process.count,
       createdAt: new Date()
     });
   },

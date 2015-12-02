@@ -7,7 +7,10 @@ AdminTeams = React.createClass({
   },
   getMeteorData() {
     return {
-      members: Members.find({}).fetch(),
+      members: Members.find({}, {
+        sort: {index: -1}
+      }),
+      counts: Counts.get('members-counter'),
       currentUser: Meteor.user()
     }
   },
@@ -22,7 +25,8 @@ AdminTeams = React.createClass({
       name: React.findDOMNode(this.refs.name).value.trim(),
       photo: React.findDOMNode(this.refs.photo).value.trim(),
       position: React.findDOMNode(this.refs.position).value.trim(),
-      biography: React.findDOMNode(this.refs.biography).value.trim()
+      biography: React.findDOMNode(this.refs.biography).value.trim(),
+      count: this.data.counts
     }
 
     Meteor.call("addMember", member);

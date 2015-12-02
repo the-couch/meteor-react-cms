@@ -70,6 +70,16 @@ Template.adminLayout.rendered = function() {
               Meteor.call('updateMemberOrder', memberUpdate);
             });
             break;
+          case 'js-services':
+            let services = this.el.querySelectorAll('li');
+            Array.from(services).forEach(function(service, index) {
+              let serviceUpdate = {
+                memberId: service.dataset.id,
+                index: index
+              }
+              Meteor.call('updateServiceOrder', serviceUpdate);
+            });
+            break;
         }
       }
     });

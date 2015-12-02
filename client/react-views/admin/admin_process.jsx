@@ -7,8 +7,11 @@ AdminProcess = React.createClass({
   },
   getMeteorData() {
     return {
-      processes: Processes.find({}).fetch(),
+      processes: Processes.find({}, {
+        sort: {index: -1}
+      }),
       page: Pages.findOne({}),
+      counts: Counts.get('processes-counter'),
       currentUser: Meteor.user()
     }
   },
@@ -22,6 +25,7 @@ AdminProcess = React.createClass({
     var process = {
       title: React.findDOMNode(this.refs.title).value.trim(),
       snippet: React.findDOMNode(this.refs.snippet).value.trim(),
+      count: this.data.counts
     }
 
     Meteor.call("addProcess", process);

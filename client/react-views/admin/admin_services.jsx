@@ -7,8 +7,11 @@ AdminServices = React.createClass({
   },
   getMeteorData() {
     return {
-      services: Services.find({}).fetch(),
+      services: Services.find({}, {
+        sort: {index: -1}
+      }),
       page: Pages.findOne({}),
+      counts: Counts.get('services-counter'),
       currentUser: Meteor.user()
     }
   },
@@ -22,6 +25,7 @@ AdminServices = React.createClass({
     var service = {
       name: React.findDOMNode(this.refs.name).value.trim(),
       icon: React.findDOMNode(this.refs.icon).value.trim(),
+      count: this.data.counts
     }
 
     Meteor.call("addService", service);

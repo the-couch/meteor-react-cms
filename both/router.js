@@ -105,4 +105,5 @@ FlowRouter.subscriptions = function() {
   this.register('processes', Meteor.subscribe('processes'));
   this.register('pages', Meteor.subscribe('pages'));
   this.register('press', Meteor.subscribe('press'));
+  this.register('notifications', Meteor.subscribe('notifications'));
 }

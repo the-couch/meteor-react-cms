@@ -4,6 +4,7 @@ Meteor.methods({
       name: String,
       position: String,
       photo: String,
+      count: Number,
       biography: String
     });
     if ( ! Meteor.userId() ) {
@@ -14,6 +15,7 @@ Meteor.methods({
       name: member.name,
       position: member.position,
       photo: member.photo,
+      index: member.count,
       biography: member.biography,
       createdAt: new Date()
     });
