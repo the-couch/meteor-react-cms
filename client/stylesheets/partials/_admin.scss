@@ -15,6 +15,10 @@
     font-size: 16px;
     resize: none;
   }
+  .btn {
+    border: 1px solid rgb(210, 209, 210);
+    background: white;
+  }
 }
 .admin {
   li {
@@ -26,14 +30,6 @@
   ul {
     margin: 0 0;
     padding: 0 0;
-  }
-  button {
-    border: none;
-    padding: 4px;
-    margin-right: 10px;
-    font-size: 16px;
-    background: white;
-    color: #ccc;
   }
   .teamMember {
     span {

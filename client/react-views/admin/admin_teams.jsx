@@ -60,7 +60,7 @@ AdminTeams = React.createClass({
               <input type="hidden" ref="photo" placeholder="Name" value={this.state.data_uri} />
               <input type="text" ref="position" placeholder="Position" />
               <textarea type="text" ref="biography" placeholder="Biography"></textarea>
-              <input type="submit" value="Create Team Member" />
+              <input type="submit" className="btn" value="Create Team Member" />
           </div>
             : ''
           }

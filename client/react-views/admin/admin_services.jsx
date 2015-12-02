@@ -8,6 +8,7 @@ AdminServices = React.createClass({
   getMeteorData() {
     return {
       services: Services.find({}).fetch(),
+      page: Pages.findOne({}),
       currentUser: Meteor.user()
     }
   },
@@ -46,6 +47,13 @@ AdminServices = React.createClass({
   render() {
     return (
       <div className="">
+        <h3>About Copy</h3>
+        <form className="service-copy">
+          <div className="form-inputs">
+            <textarea ref="about-copy" placeholder="This is the copy above the services module">{this.data.page ? this.data.page.about : ''}</textarea>
+            <input type="submit" className="btn" value="Update About Copy" />
+          </div>
+        </form>
         {this.renderServices()}
         <form className="new-service" onSubmit={this.handleSubmit} encType="multipart/form-data" >
           { this.data.currentUser ?
@@ -54,8 +62,8 @@ AdminServices = React.createClass({
               <input type="file" onChange={this.handleFile} /><br />
               <input type="text" ref="name" placeholder="Name" />
               <input type="hidden" ref="icon" placeholder="Name" value={this.state.data_uri} />
-              <input type="submit" value="Create Service" />
-          </div>
+              <input type="submit" className="btn" value="Create Service" />
+            </div>
             : ''
           }
         </form>

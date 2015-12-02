@@ -25,3 +25,10 @@ Template.adminLayout.helpers({
     return Admin;
   }
 });
+
+Template.adminLayout.rendered = function() {
+  $('textarea').redactor({
+    toolbar: true,
+    buttons: ['formatting', 'bold', 'italic', 'link']
+  });
+}
