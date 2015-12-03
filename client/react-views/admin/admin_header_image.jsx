@@ -12,7 +12,7 @@ AdminHeaderImage = React.createClass({
     }
   },
   renderHeader() {
-    if (this.data.page.headerImage) {
+    if (this.data.page && this.data.page.headerImage) {
       return <AdminHeaderImageView key={this.data.page._id} page={this.data.page} />
     }
   },
